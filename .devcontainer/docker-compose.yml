@@ -1,0 +1,33 @@
+services:
+  LangGraph-Demo:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    image: langgraph-demo
+    container_name: langgraph-demo
+    networks:
+      - langgraph-net
+    command: sleep infinity
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - 11437:11434
+    networks:
+      - langgraph-net
+    volumes:
+      - ollama_data:/root/.ollama
+      - ./:/run
+    env_file:
+      - ../.env
+    entrypoint: ["/bin/sh", "./run/entrypoint.sh"]
+
+
+
+networks:
+  langgraph-net:
+    driver: bridge
+
+volumes:
+  ollama_data:

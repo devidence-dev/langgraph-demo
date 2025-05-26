@@ -1,0 +1,14 @@
+[project]
+name = "langgraph-demo"
+version = "0.1.0"
+description = "A demo project for LangGraph with Ollama integration"
+authors = [
+    { name = "Pablo Pin" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "langchain[ollama]>=0.3.25",
+    "langgraph>=0.4.7",
+    "python-dotenv>=1.1.0",
+]
