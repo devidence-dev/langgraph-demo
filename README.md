@@ -56,7 +56,7 @@ langgraph-demo/
 3. **Set up environment variables** 🔧:
    Create a `.env` file in the project root:
    ```env
-   OLLAMA_MODEL=llama2  # or your preferred model
+   OLLAMA_MODEL=gemma3:1b  # or your preferred model
    OLLAMA_URL=http://localhost:11434
    ```
 
